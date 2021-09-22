@@ -48,8 +48,11 @@ def main(request):
     # Assign our parameters
     if request.form and 'host' in request.form and 'ip' in request.form and 'key' in request.form:
         host = request.form.get('host')
+        logging.info(host)
         ip = request.form.get('ip')
+        logging.info(ip)
         key = request.form.get('key')
+        logging.info(key)
     else:
         return page_not_found(404)
 
