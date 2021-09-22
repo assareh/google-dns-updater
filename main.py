@@ -46,10 +46,10 @@ def main(request):
     logging.info("Update request started.")
 
     # Assign our parameters
-    if request_json and 'host' in request_json and 'ip' in request_json and 'key' in request_json:
-        host = request_json['host']
-        ip = request_json['ip']
-        key = request_json['key']
+    if request.json and 'host' in request.json and 'ip' in request.json and 'key' in request.json:
+        host = request.json['host']
+        ip = request.json['ip']
+        key = request.json['key']
         logging.info(host)
         logging.info(ip)
         logging.info(key)
