@@ -46,13 +46,11 @@ def main(request):
     logging.info("Update request started.")
 
     # Assign our parameters
-    if request.args:
+    if request.args and 'host' in request.args and 'ip' in request.args and 'key' in request.args:
         host = request.args.get('host')
         ip = request.args.get('ip')
         key = request.args.get('key')
-
-    # Check we have the required parameters
-    if not (host and ip and key):
+    else:
         return page_not_found(404)
 
     # Check the key
