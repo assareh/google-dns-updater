@@ -46,12 +46,12 @@ def main(request):
     logging.info("Update request started.")
 
     # Assign our parameters
-    if request.form and 'host' in request.form and 'ip' in request.form and 'key' in request.form:
-        host = request.form.get('host')
+    if request_json and 'host' in request_json and 'ip' in request_json and 'key' in request_json:
+        host = request_json['host']
+        ip = request_json['ip']
+        key = request_json['key']
         logging.info(host)
-        ip = request.form.get('ip')
         logging.info(ip)
-        key = request.form.get('key')
         logging.info(key)
     else:
         return page_not_found(404)
