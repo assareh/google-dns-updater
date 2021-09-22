@@ -44,20 +44,12 @@ def page_unauthorized(e):
 
 def main(request):
     logging.info("Update request started.")
-    logging.info("ARGS")
-    logging.info(request.args)
-    logging.info("FORM")
-    logging.info(request.form)
 
     # Assign our parameters
-    host = request.form.get('host')
-    ip = request.form.get('ip')
-    key = request.form.get('key')
-
-    if request.args and 'host' in request.args and 'ip' in request.args and 'key' in request.args:
-        host = request.args.get('host')
-        ip = request.args.get('ip')
-        key = request.args.get('key')
+    if request.form and 'host' in request.form and 'ip' in request.form and 'key' in request.form:
+        host = request.form.get('host')
+        ip = request.form.get('ip')
+        key = request.form.get('key')
     else:
         return page_not_found(404)
 
