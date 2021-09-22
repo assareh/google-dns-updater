@@ -44,6 +44,7 @@ def page_unauthorized(e):
 
 def main(request):
     logging.info("Update request started.")
+    logging.info("ARGS")
     logging.info(request.args)
 
     # Assign our parameters
